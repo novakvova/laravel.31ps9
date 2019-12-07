@@ -11,9 +11,13 @@
 |
 */
 
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
 
-    phpinfo();
+    //phpinfo();
+    $count = DB::table('users')->count();
+    dump($count);
     exit();
     return view('welcome');
 });
