@@ -13,11 +13,15 @@
 
 use Illuminate\Support\Facades\DB;
 
-Route::get('/', function () {
+//Route::get('/', function () {
+//
+//    //phpinfo();
+//    $count = DB::table('users')->count();
+//    dump($count);
+//    exit();
+//    return view('welcome');
+//});
 
-    //phpinfo();
-    $count = DB::table('users')->count();
-    dump($count);
-    exit();
-    return view('welcome');
-});
+Route::view('/{path?}', 'app');
+
+
