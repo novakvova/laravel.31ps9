@@ -24,4 +24,13 @@ use Illuminate\Support\Facades\DB;
 
 Route::view('/{path?}', 'app');
 
+// Route::get('/', function () {
+
+//    phpinfo();
+//    $count = DB::table('users')->count();
+//    dump($count);
+//    exit();
+//    return view('welcome');
+// });
+
 

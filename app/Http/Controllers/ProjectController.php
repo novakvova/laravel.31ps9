@@ -9,6 +9,8 @@ class ProjectController extends Controller
 {
     public function index()
     {
+        $a=10;
+        return $a->toJson();
         $projects = Project::where('is_completed', false)
             ->orderBy('created_at', 'desc')
             ->withCount(['tasks' => function ($query) {
