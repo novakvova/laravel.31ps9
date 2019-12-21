@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TextFieldGroup from "../../common/TextFieldGroup";
 import ImageFieldGroupCropper from "../../common/ImageFieldGroupCropper";
+import PhoneFieldGroup from "../../common/PhoneFieldGroup";
 
 export class RegisterPage extends Component {
     state = {
@@ -34,11 +35,12 @@ export class RegisterPage extends Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log("--register submit--");
-        const { email, photo } = this.state;
+        const { email, photo, phone } = this.state;
         let errors = {};
 
         if (email === "") errors.email = "Поле не може бути пустим!";
         if (photo === "") errors.photo = "Закинь фотку!";
+        if (phone === "") errors.phone = "Дай номер!";
 
         const isValid = Object.keys(errors).length === 0;
 
@@ -86,7 +88,7 @@ export class RegisterPage extends Component {
                         onChange={this.handleChange}
                     />
 
-                    <TextFieldGroup
+                    <PhoneFieldGroup
                         field="phone"
                         label="Телефон"
                         value={phone}
