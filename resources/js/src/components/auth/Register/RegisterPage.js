@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TextFieldGroup from "../../common/TextFieldGroup";
+import ImageFieldGroupCropper from "../../common/ImageFieldGroupCropper";
 
 export class RegisterPage extends Component {
     state = {
@@ -50,6 +51,19 @@ export class RegisterPage extends Component {
         }
     };
 
+    getCroppedImage = img => {
+        if (!!this.state.errors["photo"]) {
+            let errors = Object.assign({}, this.state.errors);
+            delete errors["photo"];
+            this.setState({
+                photo: img,
+                errors
+            });
+        } else {
+            this.setState({ photo: img });
+        }
+    };
+
     render() {
         const {
             email,
@@ -78,6 +92,12 @@ export class RegisterPage extends Component {
                         value={phone}
                         error={errors.phone}
                         onChange={this.handleChange}
+                    />
+
+                    <ImageFieldGroupCropper
+                        getCroppedImage={this.getCroppedImage}
+                        error={errors.photo}
+                        photo={photo}
                     />
 
                     <TextFieldGroup
