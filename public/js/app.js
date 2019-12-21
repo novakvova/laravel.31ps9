@@ -76696,6 +76696,7 @@ function (_Component) {
       email: "",
       phone: "",
       photo: "",
+      dateBirth: "",
       password: "",
       passwordConfirm: "",
       errors: {//email: 'Invalid'
@@ -76770,6 +76771,7 @@ function (_Component) {
           photo = _this$state2.photo,
           password = _this$state2.password,
           passwordConfirm = _this$state2.passwordConfirm,
+          dateBirth = _this$state2.dateBirth,
           errors = _this$state2.errors;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
@@ -76794,6 +76796,13 @@ function (_Component) {
         getCroppedImage: this.getCroppedImage,
         error: errors.photo,
         photo: photo
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_TextFieldGroup__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        field: "dateBirth",
+        label: "\u0414\u0430\u0442\u0430 \u043D\u0430\u0440\u043E\u0434\u0436\u0435\u043D\u043D\u044F",
+        value: dateBirth,
+        error: errors.dateBirth,
+        onChange: this.handleChange,
+        type: "date"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_common_TextFieldGroup__WEBPACK_IMPORTED_MODULE_1__["default"], {
         field: "password",
         label: "\u041F\u0430\u0440\u043E\u043B\u044C",

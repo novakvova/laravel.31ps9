@@ -8,6 +8,7 @@ export class RegisterPage extends Component {
         email: "",
         phone: "",
         photo: "",
+        dateBirth: "",
         password: "",
         passwordConfirm: "",
         errors: {
@@ -73,6 +74,7 @@ export class RegisterPage extends Component {
             photo,
             password,
             passwordConfirm,
+            dateBirth,
             errors
         } = this.state;
 
@@ -100,6 +102,15 @@ export class RegisterPage extends Component {
                         getCroppedImage={this.getCroppedImage}
                         error={errors.photo}
                         photo={photo}
+                    />
+
+                    <TextFieldGroup
+                        field="dateBirth"
+                        label="Дата народження"
+                        value={dateBirth}
+                        error={errors.dateBirth}
+                        onChange={this.handleChange}
+                        type="date"
                     />
 
                     <TextFieldGroup
